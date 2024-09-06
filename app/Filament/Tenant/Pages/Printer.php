@@ -41,7 +41,7 @@ class Printer extends Page implements HasActions, HasForms
             Components\Select::make('driver')
                 ->default('usb')
                 ->options([
-                    // 'bluetooth' => 'Bluetooh',
+                    'bluetooth' => 'Bluetooh',
                     'usb' => 'USB',
                 ])
                 ->translateLabel(),

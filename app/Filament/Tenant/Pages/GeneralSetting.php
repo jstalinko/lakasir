@@ -42,8 +42,8 @@ class GeneralSetting extends Page implements HasActions, HasForms
     public function mount(): void
     {
         $about = About::first()?->toArray() ?? $this->about;
-        $about['preview_image'] = $about['photo'];
-        if ($about['photo']) {
+        $about['preview_image'] = isset($about['photo']) ?? $about['photo'];
+        if (isset($about['photo'])) {
             $about['photo'] = [$about['photo']];
         }
         foreach (config('setting.key') as $key) {
